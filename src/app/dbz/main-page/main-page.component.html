@@ -2,8 +2,11 @@
 <hr />
 <div class="row">
   
-  <app-personajes [personajesHijo]="personajesPadre">
-  </app-personajes>
-  <app-agregar [data]="personajesPadre">
+  <!-- <app-personajes [personajesHijo]="personajesPadre">
+  </app-personajes> -->
+  <app-personajes></app-personajes>
+  <!-- <app-agregar [nuevoHeroe]="nuevoPersonaje" (onEmitirNuevoPersonaje)="manejarNuevoPersonaje($event)">
+  </app-agregar> -->
+  <app-agregar [nuevoHeroe]="nuevoPersonaje">
   </app-agregar>
 </div>

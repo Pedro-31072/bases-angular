@@ -3,27 +3,22 @@ import { Component } from '@angular/core';
 import { PersonajesComponent } from '../personajes/personajes.component';
 import { Personaje } from '../interfaces/dbz.interface';
 import { AgregarComponent } from '../agregar/agregar.component';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule,PersonajesComponent,AgregarComponent],
+  imports: [CommonModule, PersonajesComponent, AgregarComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
+  providers: [DbzService],
 })
 export class MainPageComponent {
-  personajesPadre: Personaje[] = [
-    {
-      nombre: 'Goku',
-      poder: 15000,
-    },
-    {
-      nombre: 'Krilin',
-      poder: 500,
-    },
-    {
-      nombre: 'Chamcha',
-      poder: 0,
-    },
-  ]; 
+  public nuevoPersonaje: Personaje = {
+    nombre: 'Rochi',
+    poder: 234,
+  };
+  /*   public manejarNuevoPersonaje (personajeEmitido: Personaje) {
+    this.personajesPadre.push(personajeEmitido)
+  } */
 }

@@ -1,6 +1,7 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-personajes',
@@ -10,5 +11,9 @@ import { Personaje } from '../interfaces/dbz.interface';
   styleUrl: './personajes.component.css'
 })
 export class PersonajesComponent {
- @Input() personajesHijo:Personaje[] = []
+/*  @Input() personajesHijo:Personaje[] = [] */
+get personajesHijo():Personaje[]{
+  return this.dbzService.personajesService;
+}
+constructor(private dbzService:DbzService){}
 }
